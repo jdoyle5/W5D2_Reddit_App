@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  after_initialize :ensure_sessin_token
+  after_initialize :ensure_session_token
 
   def password=(password)
     @password = password

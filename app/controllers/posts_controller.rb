@@ -16,6 +16,13 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = current_user.posts.find(params[:id])
+    if @post.update_attributes(post_params)
+      redirect_to post_url(@post)
+    else
+      flash[:errors] = @post.errors.full_messages
+      redirect_to post_url(@post)
+    end
   end
 
   def show

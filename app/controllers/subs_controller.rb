@@ -23,6 +23,7 @@ class SubsController < ApplicationController
       redirect_to sub_url(@sub)
     else
       flash[:errors] = @sub.errors.full_messagesd
+      redirect_to edit_sub_url(@sub)
     end
   end
 
